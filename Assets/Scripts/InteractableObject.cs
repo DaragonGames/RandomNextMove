@@ -1,15 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-public class InteractableObject : MonoBehaviour
+public abstract class InteractableObject : MonoBehaviour
 {
     public static GameObject selected=null;
     public bool pickUpAble=true;
+    public bool Useable=false;
     public string objectName = "Ball";
 
-    private Vector3 mousePosition;
     private Vector3 backUpPosition;
 
     void Start()
@@ -20,51 +21,63 @@ public class InteractableObject : MonoBehaviour
     void Update()
     {
         if (selected != gameObject) {return;}
-        Vector3 newPos = Camera.main.ScreenToWorldPoint(Input.mousePosition - mousePosition);
 
-        if (newPos.y < 1) {
-            newPos.y =1;
+        // Move with the Mouse
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out RaycastHit raycastHit, float.MaxValue))
+        {
+            Vector3 target = new Vector3(raycastHit.point.x, raycastHit.point.y, raycastHit.point.z);
+            Vector3 direction = target -Camera.main.transform.position;
+            transform.position = target -Vector3.up*100 - direction*0.2f;
         }
-        transform.position = newPos  - Vector3.up*100;
+
+        // Catch the Moment when Mouse Button is lifted
+        if (Input.GetMouseButtonUp(0))
+        {
+            InteractableObject obj = raycastHit.transform.GetComponent<InteractableObject>();
+            EndSelection();
+            if (obj != null)
+            {
+                TryInteraction(obj);
+            }
+            
+        }
     }
 
     void OnMouseOver() {
-        Debug.Log(objectName);
         if (Input.GetMouseButtonDown(0))
         {
             if (selected == null)
             {
-                GetSelected();
+                if (pickUpAble)
+                {
+                    GetSelected();
+                }
+                if (Useable)
+                {
+                    TryUsage();
+                }
             }
-            else
-            {
-                TryInteraction();
-            }
+            
         }
     }
 
     private void GetSelected()
     {
-        selected = gameObject;
-        mousePosition = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
+        selected = gameObject;        
         transform.GetChild(0).transform.localPosition = new Vector3(0,100,0);
         transform.position = transform.position - Vector3.up*100;
     }
 
-    private void TryInteraction()
+    private void EndSelection()
     {
-        // ToDO try Interaction Between this and the selected Object
-        selected.GetComponent<InteractableObject>().ResetPosition();
         selected = null;
-    }
-
-    public void ResetPosition()
-    {
         transform.GetChild(0).transform.localPosition = new Vector3(0,0,0);
         transform.position = backUpPosition;
     }
 
-    
+    protected abstract void TryInteraction(InteractableObject obj);
 
+    protected abstract void TryUsage(); 
 
 }
