@@ -30,7 +30,10 @@ public class Lamp : InteractableObject
     {
         yield return new WaitForSeconds(1f);
         Destroy(gameObject);
-        GameManager.Instance.InstantiatePuzzlePiece(transform);
+        
+        var objectPos = transform;
+        objectPos.position += Vector3.up;
+        GameManager.Instance.InstantiatePuzzlePiece(objectPos);
     }
 }
 

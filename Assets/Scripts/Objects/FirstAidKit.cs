@@ -11,7 +11,11 @@ public class FirstAidKit : InteractableObject
         if (obj.objectName == "BrokenFurniture")
         {
             Instantiate(prefab, obj.transform.position, Quaternion.identity);
-            GameManager.Instance.InstantiatePuzzlePiece(obj.transform);
+            
+            var objectPos = obj.transform;
+            objectPos.position += Vector3.up*2;
+            
+            GameManager.Instance.InstantiatePuzzlePiece(objectPos);
             Destroy(obj.gameObject);  
         }
         else

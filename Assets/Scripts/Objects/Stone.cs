@@ -25,6 +25,9 @@ public class Stone : InteractableObject
         yield return new WaitForSeconds(1f);
         Instantiate(brokenStone, transform.GetChild(0).transform.GetChild(0).position, Quaternion.identity);
         Destroy(gameObject);
-        GameManager.Instance.InstantiatePuzzlePiece(transform);
+        
+        var objectPos = transform;
+        objectPos.position += Vector3.up;
+        GameManager.Instance.InstantiatePuzzlePiece(objectPos);
     }
 }
