@@ -37,6 +37,7 @@ public class MovePieces : MonoBehaviour
         {
             transform.position = other.gameObject.transform.position;
             isLocked = true;
+            GameManager.Instance.UpdatePuzzleCount();
         }
     }
     
