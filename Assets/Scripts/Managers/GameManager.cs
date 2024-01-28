@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     
     public static GameManager Instance;
     
+    private AudioSource _audioSource;
+    
     // Singleton Check
     private void Awake()
     {
@@ -23,6 +25,7 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -37,5 +40,10 @@ public class GameManager : MonoBehaviour
     public void InstantiatePuzzlePiece(Transform pos)
     {
         Instantiate(collectiblePuzzleItem, pos.position, collectiblePuzzleItem.transform.rotation);
+    }
+
+    public void PlayCollectMusic()
+    {
+        _audioSource.Play();
     }
 }
