@@ -9,8 +9,8 @@ public class Stone : InteractableObject
     protected override void TryInteraction(InteractableObject obj) {
         if (obj.objectName == "Window")
         {
-            StartCoroutine(DelayedAction());
-            GetComponent<Animator>();
+            transform.GetChild(0).transform.GetChild(0).GetComponent<Animator>().Play("Play");
+            StartCoroutine(DelayedAction());            
         }
 
     }
@@ -19,7 +19,8 @@ public class Stone : InteractableObject
     IEnumerator DelayedAction()
     {
         yield return new WaitForSeconds(1f);
-        Instantiate(brokenStone, transform.position, Quaternion.identity);
+        Instantiate(brokenStone, transform.GetChild(0).transform.GetChild(0).position, Quaternion.identity);
         Destroy(gameObject);
+        EventManager.Instance.onPuzzleCollected.Invoke();
     }
 }
