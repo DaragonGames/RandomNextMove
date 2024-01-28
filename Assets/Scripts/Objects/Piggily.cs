@@ -39,6 +39,11 @@ public class Piggily : MonoBehaviour
         {
             _audioSource.Play();
         }
+        else
+        {
+            _audioSource.Stop();
+            _audioSource.Play();
+        }
         
         yield return new WaitForSeconds(.5f);
         canJiggle = true;

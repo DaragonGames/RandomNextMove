@@ -6,6 +6,7 @@ public class EventManager : MonoBehaviour
     public static EventManager Instance;
     public Action onPuzzleCollected;
     public Action onAllPuzzlesCollected;
+    public Action onPostItPickUp;
 
     // Singleton Check
     private void Awake()
