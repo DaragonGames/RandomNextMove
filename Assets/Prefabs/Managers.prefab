@@ -123,3 +123,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraController: {fileID: 0}
   puzzlePieces: {fileID: 0}
+  collectiblePuzzleItem: {fileID: 2300445638176171626, guid: b9efb26645535ce468824363fa35a63f,
+    type: 3}

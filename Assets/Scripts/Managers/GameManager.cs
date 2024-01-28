@@ -8,8 +8,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject cameraController;
     [SerializeField] private GameObject puzzlePieces;
+    [SerializeField] private GameObject collectiblePuzzleItem;
     
-    private static GameManager Instance;
+    public static GameManager Instance;
     
     // Singleton Check
     private void Awake()
@@ -31,5 +32,10 @@ public class GameManager : MonoBehaviour
             cameraController.SetActive(true);
             puzzlePieces.SetActive(true);
         };
+    }
+
+    public void InstantiatePuzzlePiece(Transform pos)
+    {
+        Instantiate(collectiblePuzzleItem, pos.position, collectiblePuzzleItem.transform.rotation);
     }
 }

@@ -21,8 +21,9 @@ public class Piggily : MonoBehaviour
         {
             canJiggle = false;
             isCollectedPuzzle = true;
-            // TODO: Take puzzle piece
-            EventManager.Instance.onPuzzleCollected.Invoke();
+
+            gameObject.SetActive(false);
+            GameManager.Instance.InstantiatePuzzlePiece(transform);
         }
     }
 
