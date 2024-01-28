@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8363239507792608342}
   - component: {fileID: 8298230260851814853}
   - component: {fileID: 2850129396652455486}
+  - component: {fileID: 1270106223087477368}
   m_Layer: 0
   m_Name: Pig
   m_TagString: Untagged
@@ -28,10 +29,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1220331721543059546}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.31615832, y: 0.31615832, z: 0.6324903, w: 0.6324903}
+  m_LocalRotation: {x: 0.31616098, y: 0.31616098, z: 0.63248897, w: 0.63248897}
   m_LocalPosition: {x: 1.83, y: 1.5, z: 2.39}
-  m_LocalScale: {x: 100, y: 100, z: 100}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 50, y: 50, z: 50}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 53.118, z: 90}
@@ -127,3 +128,15 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 7406790110253308521, guid: 0f9a985ae24039c44850ac13103a8cb3, type: 3}
+--- !u!114 &1270106223087477368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220331721543059546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a6e29eb21f81414facecc9cc308bffc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

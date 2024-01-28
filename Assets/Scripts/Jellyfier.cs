@@ -52,6 +52,10 @@ public class Jellyfier : MonoBehaviour
                 {
                     Vector3 inputPoint = raycastHit.point + (raycastHit.normal * pressureOffset);
                     jellyfier.ApplyPressureToPoint(inputPoint, pressureForce);
+                    if (gameObject.GetComponent<Piggily>() != null)
+                    {
+                        gameObject.GetComponent<Piggily>().Jiggle();
+                    }
                 }
             }
 			
