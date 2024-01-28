@@ -46,9 +46,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae6bb1bd087f09e4199bcc348aecb978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nopeSound: {fileID: 4173994167411814937, guid: f597a61d1b9ef3048aff389d52350234,
+    type: 3}
   pickUpAble: 0
   Useable: 0
   objectName: Window
+  backUpPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &142519425844728412
 BoxCollider:
   m_ObjectHideFlags: 0

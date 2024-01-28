@@ -7,6 +7,8 @@ using UnityEngine;
 public abstract class InteractableObject : MonoBehaviour
 {
     public static GameObject selected=null;
+    public GameObject nopeSound;
+
     public bool pickUpAble=true;
     public bool Useable=false;
     public string objectName = "Ball";

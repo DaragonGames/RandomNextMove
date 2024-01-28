@@ -67,6 +67,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03533d7260892f8489f9dfaed2674896, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nopeSound: {fileID: 4173994167411814937, guid: f597a61d1b9ef3048aff389d52350234,
+    type: 3}
   pickUpAble: 0
   Useable: 0
   objectName: LeafPile

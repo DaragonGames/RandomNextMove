@@ -12,6 +12,10 @@ public class Stone : InteractableObject
             transform.GetChild(0).transform.GetChild(0).GetComponent<Animator>().Play("Play");
             StartCoroutine(DelayedAction());            
         }
+        else
+        {
+            Instantiate(nopeSound, Vector3.one, Quaternion.identity);
+        }
 
     }
     protected override void TryUsage() {}

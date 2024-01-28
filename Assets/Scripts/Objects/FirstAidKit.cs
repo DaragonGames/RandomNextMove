@@ -13,6 +13,10 @@ public class FirstAidKit : InteractableObject
             Instantiate(prefab, obj.transform.position, Quaternion.identity);
             Destroy(obj.gameObject);  
         }
+        else
+        {
+            Instantiate(nopeSound, Vector3.one, Quaternion.identity);
+        }
 
     }
     protected override void TryUsage() {}

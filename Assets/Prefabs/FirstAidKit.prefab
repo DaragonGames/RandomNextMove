@@ -46,9 +46,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43877ec50f4fda5468138946cd8ffe84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nopeSound: {fileID: 4173994167411814937, guid: f597a61d1b9ef3048aff389d52350234,
+    type: 3}
   pickUpAble: 1
   Useable: 0
   objectName: FirstAidKit
+  backUpPosition: {x: 0, y: 0, z: 0}
   prefab: {fileID: 1640924149973951672, guid: 28fee845fc986ea45b58249d7936a53c, type: 3}
 --- !u!65 &5995004635508431408
 BoxCollider:

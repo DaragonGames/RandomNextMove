@@ -374,9 +374,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ced3cdb6d13fda43a91fc1ea9b84b95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nopeSound: {fileID: 4173994167411814937, guid: f597a61d1b9ef3048aff389d52350234,
+    type: 3}
   pickUpAble: 1
   Useable: 0
   objectName: Broom
+  backUpPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &5165190862060012874
 GameObject:
   m_ObjectHideFlags: 0

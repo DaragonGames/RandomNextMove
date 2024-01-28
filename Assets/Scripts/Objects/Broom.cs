@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Broom : InteractableObject
 {
-
-
     protected override void TryInteraction(InteractableObject obj) {
         if (obj.objectName == "LeafPile")
         {
@@ -16,6 +14,10 @@ public class Broom : InteractableObject
             obj.GetComponent<LeafPile>().done=true;
             StartCoroutine(DelayedAction()); 
             Destroy(obj.gameObject, 3f);
+        }
+        else
+        {
+            Instantiate(nopeSound, Vector3.one, Quaternion.identity);
         }
     }
     protected override void TryUsage() {}

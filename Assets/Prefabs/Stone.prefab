@@ -46,9 +46,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cf36bc1182e9f64a8f8d5e8b7a74d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nopeSound: {fileID: 4173994167411814937, guid: f597a61d1b9ef3048aff389d52350234,
+    type: 3}
   pickUpAble: 1
   Useable: 0
   objectName: Stone
+  backUpPosition: {x: 0, y: 0, z: 0}
   brokenStone: {fileID: 0}
 --- !u!65 &834914908236976548
 BoxCollider:

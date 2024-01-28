@@ -6,15 +6,11 @@ public class NopeSound : MonoBehaviour
 {
     public AudioClip[] clips;
 
-    // Start is called before the first frame update
     void Start()
     {
-        
+        GetComponent<AudioSource>().clip = clips[(int)(Random.value*clips.Length)];
+        GetComponent<AudioSource>().Play();
+        Destroy(gameObject, 7f);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
