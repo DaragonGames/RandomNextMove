@@ -5,6 +5,12 @@ using UnityEngine;
 public class FirstAidKit : InteractableObject
 {
     public GameObject prefab;
+    private AudioSource _audioSource;
+    
+    private void Awake()
+    {
+        _audioSource = GetComponent<AudioSource>();
+    }
 
     protected override void TryInteraction(InteractableObject obj)
     {
@@ -16,6 +22,10 @@ public class FirstAidKit : InteractableObject
             objectPos.position += Vector3.up*2;
             
             GameManager.Instance.InstantiatePuzzlePiece(objectPos);
+            if (!_audioSource.isPlaying)
+            {
+                _audioSource.Play();
+            }
             Destroy(obj.gameObject);  
         }
         else
