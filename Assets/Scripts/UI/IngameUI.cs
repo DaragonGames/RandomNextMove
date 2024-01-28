@@ -16,7 +16,7 @@ public class IngameUI : MonoBehaviour
     private void UpdatePuzzleText()
     {
         puzzleAmount++;
-        if (puzzleAmount >= 1)
+        if (puzzleAmount >= 5)
         {
             EventManager.Instance.onAllPuzzlesCollected?.Invoke();
         }
