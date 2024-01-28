@@ -24,7 +24,6 @@ public class Broom : InteractableObject
     {
         yield return new WaitForSeconds(3f);
         transform.position = backUpPosition;
-        //GameManager.Instance.InstantiatePuzzlePiece(transform);
-        //EventManager.Instance.onPuzzleCollected.Invoke();
+        GameManager.Instance.InstantiatePuzzlePiece(transform);
     }
 }

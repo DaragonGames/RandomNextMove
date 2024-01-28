@@ -30,7 +30,7 @@ public class Lamp : InteractableObject
     {
         yield return new WaitForSeconds(1f);
         Destroy(gameObject);
-        EventManager.Instance.onPuzzleCollected.Invoke();
+        GameManager.Instance.InstantiatePuzzlePiece(transform);
     }
 }
 
