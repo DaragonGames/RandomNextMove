@@ -6,6 +6,13 @@ public class Stone : InteractableObject
 {
     public GameObject brokenStone;
 
+    private AudioSource _audioSource;
+    
+    private void Awake()
+    {
+        _audioSource = GetComponent<AudioSource>();
+    }
+
     protected override void TryInteraction(InteractableObject obj) {
         if (obj.objectName == "Window")
         {
@@ -22,10 +29,13 @@ public class Stone : InteractableObject
 
     IEnumerator DelayedAction()
     {
+        if (!_audioSource.isPlaying)
+        {
+            _audioSource.Play();
+        }
         yield return new WaitForSeconds(1f);
         Instantiate(brokenStone, transform.GetChild(0).transform.GetChild(0).position, Quaternion.identity);
         Destroy(gameObject);
-        
         var objectPos = transform;
         objectPos.position += Vector3.up;
         GameManager.Instance.InstantiatePuzzlePiece(objectPos);
