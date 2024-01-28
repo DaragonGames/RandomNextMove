@@ -8,7 +8,8 @@ public class Piggily : MonoBehaviour
     private bool canJiggle = true;
     private bool isCollectedPuzzle;
     private AudioSource _audioSource;
-    
+    [SerializeField] private List<GameObject> posList;
+
     private void Awake()
     {
         _audioSource = GetComponent<AudioSource>();
@@ -43,6 +44,12 @@ public class Piggily : MonoBehaviour
         {
             _audioSource.Stop();
             _audioSource.Play();
+        }
+
+        if (jellyCounter < posList.Count)
+        {
+            transform.position = posList[jellyCounter].transform.position;
+            transform.rotation = posList[jellyCounter].transform.rotation;
         }
         
         yield return new WaitForSeconds(.5f);

@@ -20,6 +20,7 @@ public class IngameUI : MonoBehaviour
         puzzleAmount++;
         if (puzzleAmount >= 6)
         {
+            postItRender.SetActive(false);
             EventManager.Instance.onAllPuzzlesCollected?.Invoke();
         }
         puzzleText.text = $"{puzzleAmount}/6";
