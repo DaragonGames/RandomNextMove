@@ -5,12 +5,7 @@ using System.Collections.Generic;
 public class DragThrow : MonoBehaviour
 {
     private Vector3 mousePosition;
-    private float posY;
     public LayerMask layerMask;
-    private void Start()
-    {
-        posY = 1.5f;
-    }
 
     private void Update()
     {
