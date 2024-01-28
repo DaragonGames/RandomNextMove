@@ -76,6 +76,10 @@ public class DrawerPuzzle : MonoBehaviour
                 }
             break;
         }
+        if (extension[2]>0.5f)
+        {
+            EventManager.Instance.onPuzzleCollected.Invoke();
+        }
         
         
     }
