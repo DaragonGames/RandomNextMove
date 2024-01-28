@@ -23,8 +23,9 @@ public class Broom : InteractableObject
             }
             // Start sucking Leaves
             obj.GetComponent<LeafPile>().done=true;
-            StartCoroutine(DelayedAction()); 
-            Destroy(obj.gameObject, 3f);
+            
+            StartCoroutine(DelayedAction(obj.transform)); 
+            Destroy(obj.gameObject, 4f);
         }
         else
         {
@@ -33,10 +34,13 @@ public class Broom : InteractableObject
     }
     protected override void TryUsage() {}
 
-    IEnumerator DelayedAction()
+    IEnumerator DelayedAction(Transform pos)
     {
         yield return new WaitForSeconds(3f);
+        var objectPos = pos;
+        objectPos.position += Vector3.up;
+
         transform.position = backUpPosition;
-        GameManager.Instance.InstantiatePuzzlePiece(transform);
+        GameManager.Instance.InstantiatePuzzlePiece(objectPos);
     }
 }

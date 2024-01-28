@@ -6,6 +6,7 @@ public class DrawerPuzzle : MonoBehaviour
 {
     public GameObject[] drawers;
     public float[] extension = new float[3];
+    [SerializeField] private Transform puzzlePos;
     public void InteractWithDrawer(int id)
     {
         switch (id) {
@@ -78,7 +79,7 @@ public class DrawerPuzzle : MonoBehaviour
         }
         if (extension[2]>0.5f)
         {
-            GameManager.Instance.InstantiatePuzzlePiece(transform);
+            GameManager.Instance.InstantiatePuzzlePiece(puzzlePos);
         }
         
         
