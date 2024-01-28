@@ -11,7 +11,7 @@ public abstract class InteractableObject : MonoBehaviour
     public bool Useable=false;
     public string objectName = "Ball";
 
-    private Vector3 backUpPosition;
+    public Vector3 backUpPosition;
 
     void Start()
     {
