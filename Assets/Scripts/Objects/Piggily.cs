@@ -7,6 +7,12 @@ public class Piggily : MonoBehaviour
     private int jellyCounter = 0;
     private bool canJiggle = true;
     private bool isCollectedPuzzle;
+    private AudioSource _audioSource;
+    
+    private void Awake()
+    {
+        _audioSource = GetComponent<AudioSource>();
+    }
     
     public void Jiggle()
     {
@@ -29,6 +35,11 @@ public class Piggily : MonoBehaviour
 
     private IEnumerator JiggleCounter()
     {
+        if (!_audioSource.isPlaying)
+        {
+            _audioSource.Play();
+        }
+        
         yield return new WaitForSeconds(.5f);
         canJiggle = true;
     }
