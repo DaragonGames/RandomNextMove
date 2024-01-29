@@ -24,6 +24,7 @@ public class Lamp : InteractableObject
             StartCoroutine(DelayedAction());  
             
         }
+        GetComponent<AudioSource>().Play();
     }
 
     IEnumerator DelayedAction()
