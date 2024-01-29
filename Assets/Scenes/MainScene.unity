@@ -878,6 +878,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3518717153960178538, guid: 65d6980aff23e874e8f5c146b06c0a8d,
         type: 3}
+      propertyPath: postIt
+      value: 
+      objectReference: {fileID: 3152914284891956532}
+    - target: {fileID: 3518717153960178538, guid: 65d6980aff23e874e8f5c146b06c0a8d,
+        type: 3}
       propertyPath: puzzlePieces
       value: 
       objectReference: {fileID: 1756895843}
@@ -1037,6 +1042,11 @@ PrefabInstance:
     - target: {fileID: 6780276774464590923, guid: 7f2a582235931df4e88a292622dea9d9,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8953680870942944881, guid: 7f2a582235931df4e88a292622dea9d9,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

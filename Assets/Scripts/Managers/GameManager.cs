@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject cameraController;
     [SerializeField] private GameObject puzzlePieces;
     [SerializeField] private GameObject collectiblePuzzleItem;
+    [SerializeField] private GameObject postIt;
     
     public static GameManager Instance;
     
@@ -34,6 +35,10 @@ public class GameManager : MonoBehaviour
     {
         EventManager.Instance.onAllPuzzlesCollected += () =>
         {
+            if (postIt != null)
+            {
+                Destroy(postIt);
+            }
             cameraController.SetActive(true);
             puzzlePieces.SetActive(true);
         };
