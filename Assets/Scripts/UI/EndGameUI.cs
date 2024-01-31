@@ -7,20 +7,19 @@ using UnityEngine.SceneManagement;
 public class EndGameUI : MonoBehaviour
 {
     [SerializeField] private GameObject credits;
-    private bool canFinish;
     
+    private bool canFinish;
+    private float scrollSpeed = 50f;
+    private float endOffset = 100f;
+
     private void Update()
     {
-        if (credits.transform.position.y >= 470 && !canFinish)
+        credits.transform.Translate(Vector3.up * scrollSpeed * Time.deltaTime);
+        
+        //Check if the text is out of the screen
+        if (credits.transform.position.y > Screen.height + endOffset)
         {
-            canFinish = true;
-            StartCoroutine(EndCoroutine());
+            SceneManager.LoadScene(0);
         }
-    }
-
-    private IEnumerator EndCoroutine()
-    {
-        yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene(0);
     }
 }
